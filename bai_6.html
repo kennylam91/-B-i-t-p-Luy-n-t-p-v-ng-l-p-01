@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai_6</title>
+</head>
+<body>
+<script>
+    let N=1;
+    let number=0; //number là số chia hết cho 7
+    let count=1; // số lượng các số chia hết cho 7
+    while(count<=30) {
+        if (N % 7 == 0) {
+            number += N;
+            count++;
+        }
+        N++;
+    }
+    document.write(number);
+
+</script>
+</body>
+</html>

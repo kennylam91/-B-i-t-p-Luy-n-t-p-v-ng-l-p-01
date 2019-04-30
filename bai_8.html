@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai_8</title>
+</head>
+<body>
+<h1>GAME ĐOÁN SỐ</h1>
+<h2>Luật chơi: người chơi nhập vào khoảng số muốn đoán, và dự đoán 1 con số trong khoảng đó sao
+    cho trùng với con số ngẫu nhiên mà máy tính đã chọn</h2>
+<button type="button" id="start" onclick="numberchoose()">Bắt đầu chơi</button>
+<style>
+    h1{
+        text-align: center;
+    }
+    h2{
+        display:block;
+        text-align: justify;
+        margin:20px 20px;
+    }
+    button{
+        width:150px;
+        height: 70px;
+        font-size:22px;
+        display: block;
+        margin-left:auto;
+        margin-right: auto;
+        border-radius: 10px;
+    }
+</style>
+<script>
+    function numberchoose() {
+        let x = parseInt(prompt("Nhập khoảng muốn đoán: từ "));
+        let y = parseInt(prompt(" đến: "));
+        let count = 1;
+        let Choose = parseInt(prompt("Nhập số dự đoán: " + count));
+        let Random = Math.floor(Math.random() * (y - x)) + x;
+        do{
+            if(Choose==Random){
+                alert("Chúc mừng bạn đã dự đoán đúng!");
+                break;
+            }
+            else{
+                if(count==3){
+                    alert("Rất tiếc, bạn đã đoán sai 3 lần! \n Số của chương trình là: " +Random);
+                    break;
+                }
+                else{
+                    if(Choose>Random){
+                        Choose=prompt("Số bạn chọn quá lớn. Vui lòng chọn lại: ");
+                    }
+                    else if(Choose<Random){
+                        Choose=prompt("Số bạn chọn quá bé. Vui lòng chọn lại: " );
+                    }
+                    count++;
+                }
+            }
+
+        }
+        while(count<=3);
+
+    }
+
+
+</script>
+</body>
+</html>
